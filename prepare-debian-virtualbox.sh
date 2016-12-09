@@ -24,4 +24,13 @@ apt-get -y clean
 apt-get -y install screen
 echo "Add your user to vboxsf and sudo, i'd do that for you but you are currently $USER..."
 sleep 3
+aptitude update
+aptitude safe-upgrade
+aptitude install apache2 apache2-doc
+curl -Is http://localhost | head -1
+aptitude -y install mysql-server php5-mysql
+mysql_secure_installation
+aptitude -y install php5-common libapache2-mod-php5 php5-cli
+echo '<?php phpinfo(); ?>' > /var/www/html/info.php
+
 reboot
