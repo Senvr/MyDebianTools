@@ -30,4 +30,4 @@ adduser serverman sudo
 
 bash $DIR/Apache2
 bash $DIR/GMod
-exit 0
+reboot

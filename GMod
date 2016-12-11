@@ -1,7 +1,7 @@
 dpkg --add-architecture i386
 apt-get update
-apt-get install ia32-libs
-apt-get install lib32ncurses5 lib32z1
+apt-get -y install ia32-libs
+apt-get -y install lib32ncurses5 lib32z1
 su serverman
 cd ~
 mkdir bin
