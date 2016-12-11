@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 apt-get -y update && apt-get -y upgrade && apt-get -y install build-essential module-assistant && m-a prepare && sh /media/cdrom0/VBoxLinuxAdditions.run 
 apt-get -y install sudo
 dpkg --add-architecture i386
@@ -24,13 +25,7 @@ apt-get -y clean
 apt-get -y install screen
 echo "Add your user to vboxsf and sudo, i'd do that for you but you are currently $USER..."
 sleep 3
-aptitude update
-aptitude safe-upgrade
-aptitude install apache2 apache2-doc
-curl -Is http://localhost | head -1
-aptitude -y install mysql-server php5-mysql
-mysql_secure_installation
-aptitude -y install php5-common libapache2-mod-php5 php5-cli
-echo '<?php phpinfo(); ?>' > /var/www/html/info.php
 
-reboot
+
+bash $DIR/Apache2
+exit 0
