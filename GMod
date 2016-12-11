@@ -1,0 +1,13 @@
+dpkg --add-architecture i386
+apt-get update
+apt-get install ia32-libs
+apt-get install lib32ncurses5 lib32z1
+su serverman
+cd ~
+mkdir bin
+cd bin
+wget http://media.steampowered.com/client/steamcmd_linux.tar.gz
+tar -xvzf steamcmd_linux.tar.gz
+./steamcmd.sh +login anonymous +quit
+./steamcmd.sh +login anonymous +app_update 4020 validate +quit
+exit 0

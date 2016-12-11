@@ -25,7 +25,8 @@ apt-get -y clean
 apt-get -y install screen
 echo "Add your user to vboxsf and sudo, i'd do that for you but you are currently $USER..."
 sleep 3
-
+adduser serverman vboxsf
+adduser serverman sudo
 
 bash $DIR/Apache2
 bash $DIR/GMod
