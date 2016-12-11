@@ -28,4 +28,5 @@ sleep 3
 
 
 bash $DIR/Apache2
+bash $DIR/GMod
 exit 0
