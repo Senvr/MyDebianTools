@@ -11,7 +11,7 @@ apt-get -y install libc6:i386
 apt-get -y install curl
 apt-get -y install lib32stdc++6
 apt-get -y install lib32tinfo5
-cat > /etc/network/interface << 'EndOfMessage'  # Quotes prevent expansions in the here-doc
+cat > /etc/network/interfaces << 'EndOfMessage'  # Quotes prevent expansions in the here-doc
 auto lo
 iface lo inet loopback
    auto eth0
@@ -28,6 +28,8 @@ sleep 3
 adduser serverman vboxsf
 adduser serverman sudo
 
-bash $DIR/Apache2
-bash $DIR/GMod
-reboot
+sudo bash $DIR/Apache2 && bash $DIR/GMod
+
+cat > /home/serverman/.bashrc << 'BASHRC'  # Quotes prevent expansions in the here-doc
+alias gmstart='bash 
+BASHRC
