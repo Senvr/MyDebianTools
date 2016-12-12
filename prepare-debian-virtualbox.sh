@@ -2,6 +2,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 apt-get -y update && apt-get -y upgrade && apt-get -y install build-essential module-assistant && m-a prepare && sh /media/cdrom0/VBoxLinuxAdditions.run 
 apt-get -y install sudo
+sh /media/cdrom0/VBoxLinuxAdditions.run
 dpkg --add-architecture i386
 apt-get -y install ia32-libs
 apt-get -y install lib32gcc1
@@ -33,3 +34,5 @@ sudo bash $DIR/Apache2 && bash $DIR/GMod
 cat > /home/serverman/.bashrc << 'BASHRC'  # Quotes prevent expansions in the here-doc
 alias gmstart='bash 
 BASHRC
+su serverman
+. ~/.bashrc
